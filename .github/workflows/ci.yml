@@ -10,6 +10,7 @@ on:
 
 jobs:
   on-push-job:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Greetings
@@ -19,6 +20,7 @@ jobs:
         run: date
 
   on-pull-job:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: On pull test
