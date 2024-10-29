@@ -14,3 +14,6 @@ jobs:
     steps:
       - name: Greetings
         run: echo "Hello world"
+
+      - name: Print date
+        run: date
