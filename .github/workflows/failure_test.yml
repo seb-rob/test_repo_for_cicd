@@ -1,0 +1,33 @@
+name: Notify Test using CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greetings
+        run: echo 'Hello World'
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run test
+        run: echo 'Running Test...'
+
+      - name: Suppose to Fail
+        run: wtsg       # failing command
+
+  notify:
+    runs-on: ubuntu-latest
+    needs: test     # this job depends on the test job
+    if: failure()   # if previous job fails
+    steps: 
+      - name: Notify Developer
+        run: './workspaces/test_repo_for_cicd/notify_script.sh'
+
+      - name: Confirmation
+        run: echo "Notified"
