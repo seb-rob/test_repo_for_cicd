@@ -1,13 +1,16 @@
-name: Sample CI file
+name: "Sample CI test"
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-    hello-world:
-        runs-on: ubuntu-latest
-        steps:
-            - name: "Greet"
-              run: echo "Hello There all !"
+  Hello-World:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greetings
+        run: echo "Hello world"
