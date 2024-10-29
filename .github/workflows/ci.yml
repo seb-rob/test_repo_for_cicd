@@ -26,3 +26,6 @@ jobs:
 
       - name: Print directory
         run: pwd
+
+      - name: Print Directory
+        run: ls
