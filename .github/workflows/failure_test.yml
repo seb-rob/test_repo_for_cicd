@@ -33,7 +33,9 @@ jobs:
         run: ls
 
       - name: Notify Developer
-        run: ./notify_script.sh   # should not be inside .github/workflow, it must be in repo
+        run: |
+          chmod +x ./notify_script.sh       # make sure executiong permission is given
+          ./notify_script.sh                # should not be inside .github/workflow, it must be in repo
 
       - name: Confirmation
         run: echo "Notified"
