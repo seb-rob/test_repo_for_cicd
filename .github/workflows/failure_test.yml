@@ -27,7 +27,7 @@ jobs:
     if: failure()   # if previous job fails
     steps: 
       - name: Notify Developer
-        run: './workspaces/test_repo_for_cicd/notify_script.sh'
+        run: ./workspaces/test_repo_for_cicd/notify_script.sh
 
       - name: Confirmation
         run: echo "Notified"
