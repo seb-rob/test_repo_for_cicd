@@ -3,13 +3,13 @@ name: "Sample CI test"
 on:
   push:
     branches:
-      - '*'
+      - main
   pull_request:
     branches:
-      - '*'
+      - main
 
 jobs:
-  Hello-World:
+  on-push-job:
     runs-on: ubuntu-latest
     steps:
       - name: Greetings
@@ -17,3 +17,12 @@ jobs:
 
       - name: Print date
         run: date
+
+  on-pull-job:
+    runs-on: ubuntu-latest
+      steps:
+        - name: On pull test
+          run: echo "Hello from on pull"
+
+        - name: Print directory
+          run: pwd
