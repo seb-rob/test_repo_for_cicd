@@ -1,0 +1,13 @@
+name: Sample CI file
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    hello-world:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Greet"
+              run: echo "Hello There all !"
