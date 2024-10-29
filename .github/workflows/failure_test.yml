@@ -29,6 +29,9 @@ jobs:
       - name: Checking out
         uses: actions/checkout@v4
 
+      - name: Check Directory list
+        run: ls
+
       - name: Notify Developer
         run: ./notify_script.sh
 
